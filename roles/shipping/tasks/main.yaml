@@ -18,7 +18,7 @@
   args:
     chdir: /app 
 
-- name: install myswl client
+- name: install mysql client
   ansible.builtin.import_role:
     name: common
     task_from: load-mysql-schema
