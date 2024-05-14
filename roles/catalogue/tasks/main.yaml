@@ -19,9 +19,10 @@
   args:
       chdir: /app
 
-- ansible.builtin.import_role:
+- name: Load Schema
+  ansible.builtin.import_role:
     name: common
-    task_from: load-mongo-schema
+    tasks_from: load-mongo-schema
 
 - name: systemd service
   ansible.builtin.import_role:
