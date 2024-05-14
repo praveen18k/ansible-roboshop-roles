@@ -18,3 +18,8 @@
   ansible.builtin.command: npm install
     args:
       chdir: /app
+
+- name: systemd service
+  ansible.builtin.import_role:
+    name: common
+    task_from: systemd-service
