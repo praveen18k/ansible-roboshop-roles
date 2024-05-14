@@ -27,4 +27,4 @@
 - name: systemd service
   ansible.builtin.import_role:
     name: common
-    task_from: systemd-service
+    tasks_from: systemd-service
