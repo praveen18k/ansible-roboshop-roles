@@ -22,7 +22,7 @@
 - name: load schema 
   ansible.builtin.import_role:
     name: common
-    task_from: 
+    task_from: load-mongo-schema
 
 - name: systemd service
   ansible.builtin.import_role:
