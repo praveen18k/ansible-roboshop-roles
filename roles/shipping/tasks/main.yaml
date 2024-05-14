@@ -1,0 +1,19 @@
+- name: install maven for shipping service
+  ansible.builtin.yum:
+    name: maven
+    state: installed
+
+- name: app setup 
+  ansible.builtin.import_role:
+    name: common
+    task_from: app-setup
+
+- name: download dependencies
+  ansible.builtin.command: mvn clean package
+  args:
+    chdir: /app 
+
+- name: rename jar file name
+  ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /app 
