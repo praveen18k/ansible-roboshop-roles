@@ -19,7 +19,7 @@
   args:
       chdir: /app
 
-- name: load schema 
+- name: load mongo schema  
   ansible.builtin.import_role:
     name: common
     task_from: load-mongo-schema
