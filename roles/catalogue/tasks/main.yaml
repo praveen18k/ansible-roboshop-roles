@@ -4,13 +4,10 @@
 #common is another role
 #imort a task nodejs.yaml in catalogue
 
-- name: setup NPS source
-  ansible.builtin.shell: "curl -sL https://rpm.nodesource.com/setup_lts.x | bash"
-
 - name: install NodeJS
   ansible.builtin.import_role:
     name: common 
-    tasks_from: 
+    tasks_from: nodejs-setup 
 
 - name: setup application
   ansible.builtin.import_role"
