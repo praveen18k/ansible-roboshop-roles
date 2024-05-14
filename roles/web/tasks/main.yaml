@@ -32,7 +32,7 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 
-- name: copy roboshop conf
+- name: copy roboshop.conf
   ansible.builtin.template:
     src: roboshop.conf.j2
     dest: /etc/nginx/default.d/roboshop.conf
