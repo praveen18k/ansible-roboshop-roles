@@ -1,0 +1,8 @@
+- name: install mysql client
+    ansible.builtin.yum:
+      name: mysql
+      state: installed
+
+  - name: load shipping component data
+    ansible.builtin.shell: mysql -h mysql.awsdevops.site -uroot -pRoboShop@1 < /app/schema/{{component}}.sql
+     

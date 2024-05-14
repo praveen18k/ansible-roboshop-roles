@@ -17,3 +17,9 @@
   ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
   args:
     chdir: /app 
+    
+
+- name: systemd and service 
+  ansible.builtin.import_role:
+    name: common
+    task_from: systemd-service
