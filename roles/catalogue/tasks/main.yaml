@@ -4,27 +4,27 @@
 #common is another role
 #imort a task nodejs.yaml in catalogue
 
-- name: install NodeJS
+- name: Install NodeJS
   ansible.builtin.import_role:
-    name: common 
-    tasks_from: nodejs-setup 
+    name: common
+    tasks_from: nodejs-setup
 
-- name: setup application
+- name: SetUp Application
   ansible.builtin.import_role:
     name: common
     tasks_from: app-setup
 
-- name: install npm dependencies
+- name: install dependencies
   ansible.builtin.command: npm install
   args:
-      chdir: /app
+    chdir: /app
 
 - name: Load Schema
   ansible.builtin.import_role:
     name: common
     tasks_from: load-mongo-schema
 
-- name: systemd service
+- name: Start application
   ansible.builtin.import_role:
     name: common
     tasks_from: systemd-service

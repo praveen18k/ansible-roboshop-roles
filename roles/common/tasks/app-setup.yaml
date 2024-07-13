@@ -4,7 +4,7 @@
   ignore_errors: true
 
 - when: roboid.rc != 0
-  name: create roboshp user
+  name: create roboshop user
   ansible.builtin.user:
     name: roboshop
 
