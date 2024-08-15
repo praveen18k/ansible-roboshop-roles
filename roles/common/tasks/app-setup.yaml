@@ -5,6 +5,7 @@
 
 - when: roboid.rc != 0
   name: create roboshop user
+  become: yes
   ansible.builtin.user:
     name: roboshop
 
@@ -23,7 +24,7 @@
     path: /app
     state: directory
     
-- name: "Download {{component}} code or artifacts"
+- name: "Download {{component}} artifacts"
   ansible.builtin.get_url: 
     url: "https://roboshop-builds.s3.amazonaws.com/{{component}}.zip" 
     dest: /tmp
