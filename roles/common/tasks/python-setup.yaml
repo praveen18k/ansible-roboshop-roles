@@ -3,6 +3,6 @@
     name: "{{item}}"
     state: installed
   loop:
-  - python36
-  - gcc
-  - python3-devel
+    - python36
+    - gcc
+    - python3-devel

@@ -1,6 +1,6 @@
 - name: disable mysql 8 version
-  ansible.builtin.command: yum module disable mysql -y 
-  
+  ansible.builtin.command: yum module disable mysql -y
+
 - name: copy mysql repo
   ansible.builtin.copy:
     src: mysql.repo
@@ -14,9 +14,10 @@
 - name: start and enable mysql
   ansible.builtin.service:
     name: mysqld
-    state: started 
+    state: started
     enabled: true
 
 - name: change the default root password
   ansible.builtin.command: mysql_secure_installation --set-root-pass RoboShop@1
-  
+
+

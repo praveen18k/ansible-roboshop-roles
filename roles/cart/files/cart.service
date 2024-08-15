@@ -6,7 +6,7 @@ User=roboshop
 Environment=REDIS_HOST=redis.awsdevops.icu 
 Environment=CATALOGUE_HOST=catalogue.awsdevops.icu 
 Environment=CATALOGUE_PORT=8080
-ExecStart=/bin/node /app/server.js
+ExecStart=/bin/node/app/server.js
 SyslogIdentifier=cart
 
 [Install]

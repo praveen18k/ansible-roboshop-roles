@@ -1,4 +1,4 @@
-- name: install python 
+- name: install python
   ansible.builtin.import_role:
     name: common
     task_from: python-setup
@@ -13,8 +13,7 @@
   args:
     chdir: /app
 
-- name: systemd and service 
+- name: systemd and service
   ansible.builtin.import_role:
     name: common
     task_from: systemd-service
-    
